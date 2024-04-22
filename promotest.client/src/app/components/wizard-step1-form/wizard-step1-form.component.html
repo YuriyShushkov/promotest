@@ -1,0 +1,51 @@
+<mat-card>
+  <mat-card-title>Step 1</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <p>
+        <mat-form-field>
+          <input type="email" matInput placeholder="Login" formControlName="login" email>
+          <mat-error *ngIf="form.get('login')!.hasError('required')">
+            Login is required!
+          </mat-error>
+          <mat-error *ngIf="form.get('login')!.hasError('email')">
+            Email incorrect!
+          </mat-error>
+
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="password">
+          <mat-error *ngIf="form.get('password')!.hasError('required')">
+            Password is required!
+          </mat-error>
+          <mat-error *ngIf="form.get('password')!.hasError('pattern')">
+            Password - must contain min 1 digit and min 1 letter
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword">
+          <mat-error *ngIf="form.get('confirmPassword')!.hasError('required')">
+            Confirm Password is required!
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-checkbox>
+          Agree to work for food
+        </mat-checkbox>
+      </p>
+
+      <div class="button">
+        <button type="submit" [routerLink]="['/step2']" mat-button>Go to step 2</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

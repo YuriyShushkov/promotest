@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-title>Step 2</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <p>
+        <mat-form-field>
+          <mat-select [(ngModel)]="userModel.countryId" placeholder="Select country" (valueChange)="changeValue($event)" formControlName="country">
+            @for (item of countries; track item) {
+            <mat-option [value]="item.id">{{item.name}}</mat-option>
+            }
+          </mat-select>
+          <mat-error *ngIf="form.get('country')!.hasError('required')">
+            Country is required!
+          </mat-error>
+
+        </mat-form-field>
+      </p><p>
+            <mat-form-field>
+              <mat-select [(ngModel)]="userModel.provinceId"  placeholder="Select province" formControlName="province">
+                @for (item of provinces; track item) {
+                <mat-option [value]="item.id">{{item.name}}</mat-option>
+                }
+              </mat-select>
+
+              <mat-error *ngIf="form.get('province')!.hasError('required')">
+                Province is required!
+              </mat-error>
+            </mat-form-field>
+      </p>
+      <div class="button">
+        <button type="submit" mat-button>Save</button>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

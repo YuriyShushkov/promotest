@@ -1,0 +1,6 @@
+@PromoTest.Server_HostAddress = http://localhost:5249
+
+GET {{PromoTest.Server_HostAddress}}/country/
+Accept: application/json
+
+###
