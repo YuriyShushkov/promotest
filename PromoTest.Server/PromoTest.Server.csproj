@@ -10,10 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\PromoTest.Server.Contracts\PromoTest.Server.Contracts.csproj" />
     <ProjectReference Include="..\promotest.client\promotest.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\PromoTest.Server.Contracts\PromoTest.Server.Contracts.csproj" />
     <ProjectReference Include="..\PromoTest.Server.Services\PromoTest.Server.Services.csproj" />
   </ItemGroup>
 
